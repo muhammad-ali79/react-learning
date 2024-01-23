@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Card from "./components/Card";
 
 function App() {
-  const [count, setCount] = useState(0)
+  let myObj = {
+    userName: "hitesh",
+    link: "go to darkweb",
+  };
+
+  const myArr = [1, 2, 3, 4, 5];
+  const random = Math.ceil(Math.random());
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <button className="bg-blue-500 p-4 rounded-md text-white border-none outline-none">
+        Click Me
+      </button>
+      <Card userName="Sam" link="Gotogithub" />
+      <Card {...myObj} />
+      <Card {...myArr} />
+      <Card userName="Nix" link="go to react.dev" id={random} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
+// to pass data between react components we use props in which we give data in the place where we use the component and pass it where we defined it using destructing and .notation because return object of
