@@ -1,17 +1,29 @@
 import { useState } from "react";
 
 function App() {
-  let [Counter, manageConter] = useState(1);
+  const [Counter, manageConter] = useState(1);
+
+  // counter is a state variable thats why i am able to change it
 
   const increaseCounter = () => {
     if (Counter > 20) return;
-    manageConter((Counter = Counter + 1));
+    // manageConter(Counter + 1);
+    // manageConter(Counter + 1);
+    // manageConter(Counter + 1);
+    // manageConter(Counter + 1);
+
+    // these will not update the counter as intended because react uses fiber to give all the these as one batch and in the one batch the counter value will be same in all calls
+
+    manageConter((prevCounter) => prevCounter + 1);
+    manageConter((prevCounter) => prevCounter + 1);
+
+    // by doing this we take the last  updated value of the state from the state updated method and increase it
     console.log(Counter);
   };
 
   const decreaseCounter = () => {
     if (Counter < 1) return;
-    manageConter((Counter = Counter - 1));
+    manageConter(Counter - 1);
     console.log(Counter);
   };
 
