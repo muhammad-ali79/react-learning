@@ -23,10 +23,10 @@ export default function App() {
     }
 
     setPassword(password);
-    // here in the dependecy array we also take the setpassword because something related to optimzation
+    // here in the dependecy array we also take the setpassword method because something related to optimzation
   }, [length, isCharAllowed, isCharAllowed, setPassword]);
 
-  // here we also use the useCallback to optimize our method
+  // here we also use the useCallback to memoize our method
   const copyToClipboard = useCallback(() => {
     passwordRef.current?.select();
     window.navigator.clipboard.writeText(password);
@@ -107,6 +107,6 @@ export default function App() {
 
 // useEffect also takes the dependecy array and given funcion will be called if the any of the depency value changes
 
-// if any of the dependecy value change in useCallback then the callback function in the will optimized not run and in the useEffect the if any of the dependecy value chanes then then given callback will be called not optimized
+// if any of the dependecy value change in useCallback then the callback function in useCallback the will memoized not run and in the useEffect the if any of the dependecy value chanes then then given callback will be called not memoized
 
 // useRef is used whenever we want to take the refernce of an element like we take referenc in the vanilla js using .querySelector
