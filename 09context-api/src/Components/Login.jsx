@@ -10,7 +10,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // here we are giving data to the
+    // here we are giving data to the context
     setUser({ username, Password });
   };
   return (
