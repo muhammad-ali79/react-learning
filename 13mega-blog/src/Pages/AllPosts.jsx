@@ -5,12 +5,12 @@ import appwriteService from "../Appwrite/config";
 function AllPosts() {
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
-  // this will get the post of the query of active
+  // this will get the posts of the query of active
   appwriteService.getPosts().then((posts) => {
     if (posts) {
-      // equaling the post to the posts that come from appWrite
+      // equaling the posts to the posts that come from appWrite
       setPosts(posts.documents);
     }
   });

@@ -20,8 +20,10 @@ class Service {
       return await this.databases.createDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
-        // here we are using the slug as a doucmet id
+        //  using the slug as a doucmet id
         slug,
+
+        // data to send when document created
         {
           title,
           content,
@@ -99,7 +101,7 @@ class Service {
     }
   }
 
-  // file upload service
+  // file upload services
 
   //   here we are uploading the file and we will give the actual file not is path
   async uploadFile(file) {

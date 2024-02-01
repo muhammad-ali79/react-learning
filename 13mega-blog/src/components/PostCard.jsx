@@ -2,6 +2,7 @@ import React from "react";
 import appwriteService from "../Appwrite/config";
 import { Link } from "react-router-dom";
 
+// for preview
 function PostCard({ $id, title, featuredImage }) {
   return (
     <Link to={`/post/${$id}`}>

@@ -7,6 +7,7 @@ function LogoutBtn() {
   const dispatch = useDispatch();
   const logoutHandler = () => {
     authService.logout().then(() => {
+      // updating the store on logout
       dispatch(logout());
     });
   };

@@ -54,7 +54,7 @@ function Login() {
           </Link>
         </p>
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        {/* handle submit is a method which takes a method */}
+        {/* handle submit is a method which takes a method which gives the from submitted data*/}
         <form onSubmit={handleSubmit(login)} className="mt-8">
           <div className="space-y-5">
             <Input
